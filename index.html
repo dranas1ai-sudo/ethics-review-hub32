@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Review | المرجع الشامل</title>
+    <title>Elite Review | المرجع الشرعي والمهني</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,9 +31,9 @@
             overflow-x: hidden;
         }
 
-        /* --- القائمة الجانبية (تم توسيع المسافات) --- */
+        /* --- القائمة الجانبية --- */
         aside {
-            width: 280px; /* عرض أكبر قليلاً */
+            width: 280px;
             background-color: var(--bg-sidebar);
             border-left: 1px solid var(--border);
             height: 100vh;
@@ -41,7 +41,7 @@
             right: 0;
             top: 0;
             z-index: 1000;
-            padding: 40px 25px; /* هوامش أكبر */
+            padding: 40px 25px;
             display: flex;
             flex-direction: column;
             box-shadow: -5px 0 20px rgba(0,0,0,0.8);
@@ -51,7 +51,7 @@
             font-size: 2rem;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 60px; /* مسافة كبيرة تحت الشعار */
+            margin-bottom: 60px;
             text-align: center;
             border-bottom: 2px solid var(--gold);
             padding-bottom: 25px;
@@ -62,9 +62,9 @@
         .nav-item {
             display: flex;
             align-items: center;
-            gap: 20px; /* مسافة أكبر بين الأيقونة والنص */
-            padding: 18px 25px; /* حشوة أكبر للعنصر */
-            margin-bottom: 20px; /* مسافة كبيرة بين كل زر وآخر */
+            gap: 20px;
+            padding: 18px 25px;
+            margin-bottom: 20px;
             color: var(--text-muted);
             text-decoration: none;
             border-radius: 12px;
@@ -77,7 +77,7 @@
             background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), transparent);
             color: var(--gold);
             border-right: 5px solid var(--gold);
-            padding-right: 20px; /* حركة بسيطة عند التحويم */
+            padding-right: 20px;
         }
         .nav-item i { width: 30px; text-align: center; font-size: 1.3rem; }
 
@@ -92,7 +92,7 @@
         .hero {
             height: 320px;
             border-radius: 25px;
-            background: linear-gradient(to top, #0a0a0a, transparent), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472');
+            background: linear-gradient(to top, #0a0a0a, transparent), url('https://images.unsplash.com/photo-1519681393798-3828fb4090bb?q=80&w=1470');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -113,18 +113,18 @@
         .section-header {
             display: flex;
             align-items: center;
-            gap: 20px; /* مسافة بين أيقونة العنوان والنص */
+            gap: 20px;
             margin-bottom: 40px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 20px;
         }
         .section-title { font-size: 2.2rem; color: var(--gold); font-weight: 800; }
 
-        /* الشبكة والبطاقات (Grid & Cards) */
+        /* الشبكة والبطاقات */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 35px; /* مسافة أكبر بين البطاقات */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
         }
 
         .card {
@@ -135,6 +135,8 @@
             transition: 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -156,7 +158,7 @@
 
         .card h3 {
             color: #fff; margin-bottom: 20px; font-size: 1.5rem; 
-            display: flex; align-items: center; gap: 15px; /* تباعد الأيقونة داخل الكرت */
+            display: flex; align-items: center; gap: 15px;
         }
         .card h3 i { color: var(--gold); font-size: 1.4rem; }
 
@@ -165,7 +167,7 @@
         }
 
         .card ul {
-            list-style: none; padding-right: 5px; color: #ccc; font-size: 1rem;
+            list-style: none; padding-right: 5px; color: #ccc; font-size: 1rem; margin-bottom: auto;
         }
         .card li {
             margin-bottom: 12px; position: relative; padding-right: 25px;
@@ -174,14 +176,17 @@
             content: "•"; color: var(--gold); font-weight: bold; position: absolute; right: 0; font-size: 1.4rem; top: -5px;
         }
 
-        /* نصوص مقدسة */
+        /* --- تصميم النصوص المقدسة --- */
         .quran-box {
-            background: rgba(46, 204, 113, 0.08);
-            border-right: 5px solid var(--green-islamic);
+            background: rgba(46, 204, 113, 0.05);
+            border-right: 4px solid var(--green-islamic);
             padding: 20px;
             margin-top: 25px;
-            border-radius: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
+        
+        .quran-box:hover { background: rgba(46, 204, 113, 0.1); }
         
         .quran-text {
             color: var(--green-islamic);
@@ -205,13 +210,7 @@
         @media (max-width: 900px) {
             aside { width: 80px; padding: 20px 10px; }
             .brand, .nav-item span { display: none; }
-            .nav-item { 
-                justify-content: center; 
-                padding: 0; 
-                width: 55px; height: 55px; 
-                border-radius: 50%; 
-                margin-bottom: 25px; /* تباعد الأيقونات في الجوال */
-            }
+            .nav-item { justify-content: center; padding: 0; width: 55px; height: 55px; border-radius: 50%; margin-bottom: 25px; }
             .nav-item i { margin: 0; font-size: 1.4rem; }
             .nav-item:hover, .nav-item.active { border-right: none; border: 2px solid var(--gold); padding: 0; }
             
@@ -235,33 +234,39 @@
 
     <main>
         <div class="hero">
-            <h1>أخلاقيات المهنة</h1>
-            <p>منصة المراجعة الشاملة للمقرر (4). تم تجميع المعلومات بدقة، مع التركيز على التأصيل الشرعي والنماذج الحضارية.</p>
+            <h1>المرجع الشامل للأخلاقيات</h1>
+            <p>منصة متكاملة للمقرر (4). تم جمع كافة الأدلة الشرعية من القرآن والسنة لترسيخ القيم والمبادئ المهنية.</p>
         </div>
 
         <div id="u8" class="section-container">
             <div class="section-header">
                 <i class="fas fa-sitemap fa-3x" style="color:var(--gold);"></i>
-                <div class="section-title">الوحدة الثامنة: أخلاقيات الإدارة</div>
+                <div class="section-title">الوحدة الثامنة: الإدارة</div>
             </div>
             <div class="grid">
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470" class="card-img" alt="تخطيط">
-                    <h3><i class="fas fa-info-circle"></i> المفهوم والأهداف</h3>
-                    <p>الإدارة في الإسلام هي تنفيذ العمليات بأسلوب يجمع بين الكفاءة والالتزام الشرعي. تهدف لحفظ الكليات الخمس (الدين، النفس، العقل، النسل، المال).</p>
+                    <h3><i class="fas fa-info-circle"></i> معايير التوظيف والإتقان</h3>
+                    <p>أساس التوظيف في الإسلام هو الكفاءة والأمانة، وأساس العمل هو الإتقان.</p>
                     <div class="quran-box">
-                        <span class="quran-label">حديث شريف:</span>
+                        <span class="quran-label">قرآن كريم (معيار التوظيف):</span>
+                        <span class="quran-text">﴿إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ﴾</span>
+                    </div>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف (الإتقان):</span>
                         <span class="quran-text">"إن الله يحب إذا عمل أحدكم عملاً أن يتقنه"</span>
                     </div>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-cogs"></i> الوظائف الأربعة</h3>
+                    <h3><i class="fas fa-users-cog"></i> المسؤولية والتوجيه</h3>
                     <ul>
-                        <li><strong>التخطيط:</strong> هو التفكير المسبق والأخذ بالأسباب.</li>
-                        <li><strong>التنظيم:</strong> وضع الرجل المناسب في المكان المناسب.</li>
-                        <li><strong>التوجيه:</strong> يعتمد على الشورى والرفق والقدوة.</li>
-                        <li><strong>الرقابة:</strong> جوهرها (الرقابة الذاتية) واستشعار اطلاع الله.</li>
+                        <li><strong>التنظيم:</strong> منع الازدواجية ووضع الرجل المناسب.</li>
+                        <li><strong>التوجيه:</strong> يعتمد على اللين والشورى.</li>
                     </ul>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف (المسؤولية):</span>
+                        <span class="quran-text">"كلكم راع ومسؤول عن رعيته، فالإمام راع وهو مسؤول عن رعيته..."</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -269,36 +274,28 @@
         <div id="u9" class="section-container">
             <div class="section-header">
                 <i class="fas fa-landmark fa-3x" style="color:var(--gold);"></i>
-                <div class="section-title">الوحدة التاسعة: نماذج الحضارة</div>
+                <div class="section-title">الوحدة التاسعة: الحضارة</div>
             </div>
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1374" class="card-img" alt="كتب">
-                    <h3><i class="fas fa-book-reader"></i> التعليم (ابن جماعة)</h3>
-                    <p>العالم "ابن جماعة" في كتابه (تذكرة السامع) وضع آداباً للمعلم منها:</p>
-                    <ul>
-                        <li>دوام مراقبة الله في السر والعلن.</li>
-                        <li>صيانة العلم عن الأطماع الدنيوية.</li>
-                        <li>قول "لا أدري" لما لا يعلم (نصف العلم).</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2187d80a1a44?q=80&w=1470" class="card-img" alt="طب">
-                    <h3><i class="fas fa-user-md"></i> الطب (ابن رضوان)</h3>
-                    <p>حدد الطبيب علي بن رضوان 7 خصال للطبيب المسلم:</p>
-                    <ul>
-                        <li>حفظ الأسرار (كتمان السر).</li>
-                        <li>عفة النظر (خاصة عند علاج النساء).</li>
-                        <li>الرحمة وعلاج الفقراء.</li>
-                        <li>طهارة القلب والملبس.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-balance-scale-right"></i> الحسبة</h3>
-                    <p>وظيفة رقابية إسلامية تعني: الأمر بالمعروف إذا ظهر تركه، والنهي عن المنكر إذا ظهر فعله.</p>
+                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1374" class="card-img" alt="علم">
+                    <h3><i class="fas fa-book-reader"></i> العلم والتعليم</h3>
+                    <p>أدب العالم والمتعلم (ابن جماعة)، وأهمية نشر العلم وعدم كتمانه.</p>
                     <div class="quran-box">
-                        <span class="quran-label">قرآن كريم:</span>
+                        <span class="quran-label">حديث شريف (أمانة العلم):</span>
+                        <span class="quran-text">"من سُئل عن علم فكتمه ألجمه الله بلجام من نار يوم القيامة"</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-balance-scale-right"></i> الحسبة والرقابة</h3>
+                    <p>الأمر بالمعروف والنهي عن المنكر، ومراقبة الأسواق والمكاييل.</p>
+                    <div class="quran-box">
+                        <span class="quran-label">قرآن كريم (الحسبة):</span>
                         <span class="quran-text">﴿وَلْتَكُن مِّنكُمْ أُمَّةٌ يَدْعُونَ إِلَى الْخَيْرِ وَيَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنكَرِ﴾</span>
+                    </div>
+                    <div class="quran-box">
+                        <span class="quran-label">قرآن كريم (المكاييل):</span>
+                        <span class="quran-text">﴿وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ﴾</span>
                     </div>
                 </div>
             </div>
@@ -311,16 +308,16 @@
             </div>
             <div class="grid">
                 <div class="card">
-                    <h3><i class="fas fa-chalkboard-teacher"></i> رسالة المعلم</h3>
-                    <p>التعليم رسالة وليس مجرد وظيفة. المعلم يمثل المسلم الوسطي المعتدل، وهو شريك أساسي للأسرة في التربية.</p>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-list-ol"></i> مواد الميثاق الهامة</h3>
-                    <ul>
-                        <li><strong>المادة 4:</strong> المعلم يدرك أن الرقيب الحقيقي هو الله.</li>
-                        <li><strong>المادة 5:</strong> العدل بين الطلاب (لا عنف ولا تمييز).</li>
-                        <li><strong>المادة 6:</strong> تعزيز الانتماء الوطني واحترام ولاة الأمر.</li>
-                    </ul>
+                    <h3><i class="fas fa-chalkboard-teacher"></i> المعلم قدوة</h3>
+                    <p>المعلم صاحب رسالة سامية ومؤتمن على الطلاب.</p>
+                    <div class="quran-box">
+                        <span class="quran-label">قرآن كريم:</span>
+                        <span class="quran-text">﴿وَاتَّقُوا اللَّهَ ۖ وَيُعَلِّمُكُمُ اللَّهُ﴾</span>
+                    </div>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف:</span>
+                        <span class="quran-text">"إنما بعثت لأتمم مكارم الأخلاق"</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -332,20 +329,28 @@
             </div>
             <div class="grid">
                 <div class="card">
-                    <h3><i class="fas fa-eye"></i> الرقابة الذاتية</h3>
-                    <p>هي خط الدفاع الأول. تعتمد على "مقام الإحسان": أن تعبد الله كأنك تراه.</p>
+                    <h3><i class="fas fa-eye"></i> الرقابة الذاتية (الإحسان)</h3>
+                    <p>أن تعبد الله في عملك كأنك تراه.</p>
                     <div class="quran-box">
                         <span class="quran-label">قرآن كريم:</span>
                         <span class="quran-text">﴿أَلَمْ يَعْلَمْ بِأَنَّ اللَّهَ يَرَى﴾</span>
                     </div>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف (الإحسان):</span>
+                        <span class="quran-text">"أن تعبد الله كأنك تراه، فإن لم تكن تراه فإنه يراك"</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-check-double"></i> وسائل إدارية</h3>
-                    <ul>
-                        <li><strong>القدوة القيادية:</strong> صلاح المدير يصلح الموظفين.</li>
-                        <li><strong>تصحيح الفهم:</strong> العمل عبادة يؤجر عليها المسلم.</li>
-                        <li><strong>التقييم العادل:</strong> مبدأ الثواب والعقاب.</li>
-                    </ul>
+                    <h3><i class="fas fa-hand-holding-usd"></i> حقوق الموظف</h3>
+                    <p>العدل في الأجر وعدم تأخير الحقوق.</p>
+                    <div class="quran-box">
+                        <span class="quran-label">قرآن كريم:</span>
+                        <span class="quran-text">﴿وَقُلِ اعْمَلُوا فَسَيَرَى اللَّهُ عَمَلَكُمْ وَرَسُولُهُ وَالْمُؤْمِنُونَ﴾</span>
+                    </div>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف:</span>
+                        <span class="quran-text">"أعطوا الأجير أجره قبل أن يجف عرقه"</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -358,27 +363,34 @@
             <div class="grid">
                 <div class="card">
                     <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1472" class="card-img" alt="قانون">
-                    <h3><i class="fas fa-ban"></i> الفساد الإداري</h3>
-                    <p>هو استغلال السلطة العامة لتحقيق مصالح خاصة. يشمل: الرشوة، الاختلاس، والتزوير.</p>
+                    <h3><i class="fas fa-ban"></i> الرشوة والغش</h3>
+                    <p>كل مال يؤخذ بغير حق فهو سحت.</p>
                     <div class="quran-box">
-                        <span class="quran-label">حديث شريف:</span>
-                        <span class="quran-text">"مَنْ غَشَّ فَلَيْسَ مِنَّا"</span>
+                        <span class="quran-label">قرآن كريم (المال الحرام):</span>
+                        <span class="quran-text">﴿وَلَا تَأْكُلُوا أَمْوَالَكُم بَيْنَكُم بِالْبَاطِلِ﴾</span>
+                    </div>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف (الرشوة):</span>
+                        <span class="quran-text">"لعن رسول الله ﷺ الراشي والمرتشي"</span>
                     </div>
                 </div>
                 <div class="card">
-                    <h3><i class="fas fa-exclamation-circle"></i> أنواع المخالفات</h3>
-                    <ul>
-                        <li><strong>السرقة:</strong> أخذ المال خفية (توجب الحد).</li>
-                        <li><strong>الرشوة:</strong> دفع مال لإبطال حق أو إحقاق باطل.</li>
-                        <li><strong>الوساطة السيئة:</strong> الشفاعة التي تضيع حقوق الآخرين.</li>
-                        <li><strong>إفشاء الأسرار:</strong> خيانة للأمانة الوظيفية.</li>
-                    </ul>
+                    <h3><i class="fas fa-exclamation-triangle"></i> الغلول والهدايا</h3>
+                    <p>استغلال المنصب لأخذ الهدايا محرم.</p>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف (الغش):</span>
+                        <span class="quran-text">"مَنْ غَشَّ فَلَيْسَ مِنَّا"</span>
+                    </div>
+                    <div class="quran-box">
+                        <span class="quran-label">حديث شريف (هدايا الموظفين):</span>
+                        <span class="quran-text">"هدايا العمال غلول" (أي خيانة وسرقة)</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>جميع الحقوق محفوظة &copy; 2024 | Elite Review</p>
+            <p>جميع الحقوق محفوظة &copy; 2024 | المرجع الشرعي للأخلاقيات</p>
         </footer>
     </main>
 
