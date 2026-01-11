@@ -10,13 +10,13 @@
     
     <style>
         :root {
-            --bg-body: #0a0a0a;       /* خلفية سوداء هادئة */
-            --bg-card: #141414;       /* خلفية البطاقات */
-            --bg-sidebar: #050505;    /* خلفية القائمة */
-            --text-main: #ececec;     /* لون النص الأساسي */
-            --text-muted: #a0a0a0;    /* لون النص الثانوي */
-            --gold: #D4AF37;          /* اللون الذهبي للعناوين */
-            --green-islamic: #2ecc71; /* الأخضر للآيات والأحاديث */
+            --bg-body: #0a0a0a;
+            --bg-card: #141414;
+            --bg-sidebar: #050505;
+            --text-main: #ececec;
+            --text-muted: #a0a0a0;
+            --gold: #D4AF37;
+            --green-islamic: #2ecc71;
             --border: #333;
             --shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
@@ -31,9 +31,9 @@
             overflow-x: hidden;
         }
 
-        /* --- القائمة الجانبية (Sidebar) --- */
+        /* --- القائمة الجانبية (تم توسيع المسافات) --- */
         aside {
-            width: 260px;
+            width: 280px; /* عرض أكبر قليلاً */
             background-color: var(--bg-sidebar);
             border-left: 1px solid var(--border);
             height: 100vh;
@@ -41,20 +41,20 @@
             right: 0;
             top: 0;
             z-index: 1000;
-            padding: 30px 15px;
+            padding: 40px 25px; /* هوامش أكبر */
             display: flex;
             flex-direction: column;
             box-shadow: -5px 0 20px rgba(0,0,0,0.8);
         }
 
         .brand {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 900;
             color: #fff;
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* مسافة كبيرة تحت الشعار */
             text-align: center;
             border-bottom: 2px solid var(--gold);
-            padding-bottom: 20px;
+            padding-bottom: 25px;
             letter-spacing: 1px;
         }
         .brand span { color: var(--gold); }
@@ -62,73 +62,75 @@
         .nav-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
-            margin-bottom: 10px;
+            gap: 20px; /* مسافة أكبر بين الأيقونة والنص */
+            padding: 18px 25px; /* حشوة أكبر للعنصر */
+            margin-bottom: 20px; /* مسافة كبيرة بين كل زر وآخر */
             color: var(--text-muted);
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: 0.3s ease;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         .nav-item:hover, .nav-item.active {
             background: linear-gradient(90deg, rgba(212, 175, 55, 0.15), transparent);
             color: var(--gold);
-            border-right: 4px solid var(--gold);
+            border-right: 5px solid var(--gold);
+            padding-right: 20px; /* حركة بسيطة عند التحويم */
         }
-        .nav-item i { width: 25px; text-align: center; font-size: 1.1rem; }
+        .nav-item i { width: 30px; text-align: center; font-size: 1.3rem; }
 
         /* --- المحتوى الرئيسي --- */
         main {
-            margin-right: 260px;
-            width: calc(100% - 260px);
-            padding: 40px;
+            margin-right: 280px;
+            width: calc(100% - 280px);
+            padding: 50px;
         }
 
         /* Hero Header */
         .hero {
-            height: 300px;
-            border-radius: 20px;
+            height: 320px;
+            border-radius: 25px;
             background: linear-gradient(to top, #0a0a0a, transparent), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 40px;
-            margin-bottom: 50px;
+            padding: 50px;
+            margin-bottom: 70px;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: #fff; text-shadow: 2px 2px 5px #000; }
-        .hero p { font-size: 1.2rem; color: #ccc; max-width: 700px; }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 15px; color: #fff; text-shadow: 2px 2px 5px #000; }
+        .hero p { font-size: 1.3rem; color: #ccc; max-width: 700px; line-height: 1.6; }
 
         /* الأقسام (Sections) */
-        .section-container { margin-bottom: 80px; padding-top: 20px; } /* padding-top للربط السلس */
+        .section-container { margin-bottom: 100px; padding-top: 20px; }
         
         .section-header {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            gap: 20px; /* مسافة بين أيقونة العنوان والنص */
+            margin-bottom: 40px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
-        .section-title { font-size: 2rem; color: var(--gold); font-weight: 800; }
+        .section-title { font-size: 2.2rem; color: var(--gold); font-weight: 800; }
 
         /* الشبكة والبطاقات (Grid & Cards) */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px; /* مسافة أكبر بين البطاقات */
         }
 
         .card {
             background: var(--bg-card);
-            border-radius: 16px;
-            padding: 25px;
+            border-radius: 18px;
+            padding: 30px;
             border: 1px solid var(--border);
             transition: 0.3s;
             position: relative;
@@ -136,78 +138,86 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
 
         .card-img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
             filter: brightness(0.7);
             transition: 0.3s;
         }
         .card:hover .card-img { filter: brightness(1); }
 
         .card h3 {
-            color: #fff; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;
+            color: #fff; margin-bottom: 20px; font-size: 1.5rem; 
+            display: flex; align-items: center; gap: 15px; /* تباعد الأيقونة داخل الكرت */
         }
-        .card h3 i { color: var(--gold); }
+        .card h3 i { color: var(--gold); font-size: 1.4rem; }
 
         .card p {
-            color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 15px;
+            color: var(--text-muted); line-height: 1.9; font-size: 1.05rem; margin-bottom: 20px;
         }
 
         .card ul {
-            list-style: none; padding-right: 5px; color: #ccc; font-size: 0.95rem;
+            list-style: none; padding-right: 5px; color: #ccc; font-size: 1rem;
         }
         .card li {
-            margin-bottom: 8px; position: relative; padding-right: 18px;
+            margin-bottom: 12px; position: relative; padding-right: 25px;
         }
         .card li::before {
-            content: "•"; color: var(--gold); font-weight: bold; position: absolute; right: 0; font-size: 1.2rem; top: -2px;
+            content: "•"; color: var(--gold); font-weight: bold; position: absolute; right: 0; font-size: 1.4rem; top: -5px;
         }
 
-        /* --- تنسيق النصوص المقدسة (قرآن/حديث) --- */
+        /* نصوص مقدسة */
         .quran-box {
-            background: rgba(46, 204, 113, 0.08); /* خلفية خضراء شفافة جداً */
-            border-right: 4px solid var(--green-islamic);
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 8px;
+            background: rgba(46, 204, 113, 0.08);
+            border-right: 5px solid var(--green-islamic);
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 10px;
         }
         
         .quran-text {
             color: var(--green-islamic);
             font-family: 'Amiri', serif;
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.3rem;
+            line-height: 1.9;
             font-weight: bold;
             display: block;
         }
         
         .quran-label {
-            font-size: 0.8rem; color: #888; display: block; margin-bottom: 5px; font-weight: normal; font-family: 'Tajawal', sans-serif;
+            font-size: 0.9rem; color: #888; display: block; margin-bottom: 8px; font-family: 'Tajawal', sans-serif;
         }
 
         /* الفوتر */
         footer {
-            text-align: center; margin-top: 60px; padding: 30px; border-top: 1px solid var(--border); color: #555; font-size: 0.9rem;
+            text-align: center; margin-top: 80px; padding: 40px; border-top: 1px solid var(--border); color: #555;
         }
 
-        /* التجاوب (Responsive) */
+        /* التجاوب */
         @media (max-width: 900px) {
-            aside { width: 70px; padding: 20px 10px; align-items: center; }
+            aside { width: 80px; padding: 20px 10px; }
             .brand, .nav-item span { display: none; }
-            .nav-item { justify-content: center; padding: 15px; width: 100%; border-radius: 50%; height: 50px; width: 50px; margin-bottom: 15px; }
-            .nav-item:hover, .nav-item.active { border-right: none; border: 2px solid var(--gold); }
+            .nav-item { 
+                justify-content: center; 
+                padding: 0; 
+                width: 55px; height: 55px; 
+                border-radius: 50%; 
+                margin-bottom: 25px; /* تباعد الأيقونات في الجوال */
+            }
+            .nav-item i { margin: 0; font-size: 1.4rem; }
+            .nav-item:hover, .nav-item.active { border-right: none; border: 2px solid var(--gold); padding: 0; }
             
-            main { margin-right: 70px; width: calc(100% - 70px); padding: 20px; }
-            .hero { height: 220px; padding: 20px; }
-            .hero h1 { font-size: 2rem; }
+            main { margin-right: 80px; width: calc(100% - 80px); padding: 25px; }
+            .hero { height: 240px; padding: 25px; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -216,11 +226,11 @@
     <aside>
         <div class="brand">Elite<span>Review</span></div>
         
-        <a href="#u8" class="nav-item active" title="الإدارة"><i class="fas fa-sitemap"></i> <span>الوحدة 8</span></a>
-        <a href="#u9" class="nav-item" title="الحضارة"><i class="fas fa-landmark"></i> <span>الوحدة 9</span></a>
-        <a href="#u10" class="nav-item" title="الميثاق"><i class="fas fa-scroll"></i> <span>الوحدة 10</span></a>
-        <a href="#u11" class="nav-item" title="الترسيخ"><i class="fas fa-seedling"></i> <span>الوحدة 11</span></a>
-        <a href="#u12" class="nav-item" title="المخالفات"><i class="fas fa-gavel"></i> <span>الوحدة 12</span></a>
+        <a href="#u8" class="nav-item active"><i class="fas fa-sitemap"></i> <span>الوحدة 8</span></a>
+        <a href="#u9" class="nav-item"><i class="fas fa-landmark"></i> <span>الوحدة 9</span></a>
+        <a href="#u10" class="nav-item"><i class="fas fa-scroll"></i> <span>الوحدة 10</span></a>
+        <a href="#u11" class="nav-item"><i class="fas fa-seedling"></i> <span>الوحدة 11</span></a>
+        <a href="#u12" class="nav-item"><i class="fas fa-gavel"></i> <span>الوحدة 12</span></a>
     </aside>
 
     <main>
@@ -231,7 +241,7 @@
 
         <div id="u8" class="section-container">
             <div class="section-header">
-                <i class="fas fa-sitemap fa-2x" style="color:var(--gold); margin-left:15px;"></i>
+                <i class="fas fa-sitemap fa-3x" style="color:var(--gold);"></i>
                 <div class="section-title">الوحدة الثامنة: أخلاقيات الإدارة</div>
             </div>
             <div class="grid">
@@ -247,9 +257,9 @@
                 <div class="card">
                     <h3><i class="fas fa-cogs"></i> الوظائف الأربعة</h3>
                     <ul>
-                        <li><strong>التخطيط:</strong> هو التفكير المسبق والأخذ بالأسباب وليس التواكل.</li>
-                        <li><strong>التنظيم:</strong> وضع الرجل المناسب في المكان المناسب ومنع الازدواجية.</li>
-                        <li><strong>التوجيه:</strong> يعتمد على الشورى والرفق والقدوة الحسنة.</li>
+                        <li><strong>التخطيط:</strong> هو التفكير المسبق والأخذ بالأسباب.</li>
+                        <li><strong>التنظيم:</strong> وضع الرجل المناسب في المكان المناسب.</li>
+                        <li><strong>التوجيه:</strong> يعتمد على الشورى والرفق والقدوة.</li>
                         <li><strong>الرقابة:</strong> جوهرها (الرقابة الذاتية) واستشعار اطلاع الله.</li>
                     </ul>
                 </div>
@@ -258,7 +268,7 @@
 
         <div id="u9" class="section-container">
             <div class="section-header">
-                <i class="fas fa-landmark fa-2x" style="color:var(--gold); margin-left:15px;"></i>
+                <i class="fas fa-landmark fa-3x" style="color:var(--gold);"></i>
                 <div class="section-title">الوحدة التاسعة: نماذج الحضارة</div>
             </div>
             <div class="grid">
@@ -296,7 +306,7 @@
 
         <div id="u10" class="section-container">
             <div class="section-header">
-                <i class="fas fa-scroll fa-2x" style="color:var(--gold); margin-left:15px;"></i>
+                <i class="fas fa-scroll fa-3x" style="color:var(--gold);"></i>
                 <div class="section-title">الوحدة العاشرة: الميثاق</div>
             </div>
             <div class="grid">
@@ -317,8 +327,8 @@
 
         <div id="u11" class="section-container">
             <div class="section-header">
-                <i class="fas fa-seedling fa-2x" style="color:var(--gold); margin-left:15px;"></i>
-                <div class="section-title">الوحدة الحادية عشرة: الترسيخ</div>
+                <i class="fas fa-seedling fa-3x" style="color:var(--gold);"></i>
+                <div class="section-title">الوحدة 11: الترسيخ</div>
             </div>
             <div class="grid">
                 <div class="card">
@@ -334,7 +344,7 @@
                     <ul>
                         <li><strong>القدوة القيادية:</strong> صلاح المدير يصلح الموظفين.</li>
                         <li><strong>تصحيح الفهم:</strong> العمل عبادة يؤجر عليها المسلم.</li>
-                        <li><strong>التقييم العادل:</strong> مبدأ الثواب والعقاب (من أمن العقوبة أساء الأدب).</li>
+                        <li><strong>التقييم العادل:</strong> مبدأ الثواب والعقاب.</li>
                     </ul>
                 </div>
             </div>
@@ -342,8 +352,8 @@
 
         <div id="u12" class="section-container">
             <div class="section-header">
-                <i class="fas fa-gavel fa-2x" style="color:var(--gold); margin-left:15px;"></i>
-                <div class="section-title">الوحدة الثانية عشرة: المخالفات</div>
+                <i class="fas fa-gavel fa-3x" style="color:var(--gold);"></i>
+                <div class="section-title">الوحدة 12: المخالفات</div>
             </div>
             <div class="grid">
                 <div class="card">
@@ -359,8 +369,8 @@
                     <h3><i class="fas fa-exclamation-circle"></i> أنواع المخالفات</h3>
                     <ul>
                         <li><strong>السرقة:</strong> أخذ المال خفية (توجب الحد).</li>
-                        <li><strong>الرشوة:</strong> دفع مال لإبطال حق أو إحقاق باطل (محرمة وملعون فاعلها).</li>
-                        <li><strong>الوساطة السيئة:</strong> الشفاعة التي تضيع حقوق الآخرين (ظلم).</li>
+                        <li><strong>الرشوة:</strong> دفع مال لإبطال حق أو إحقاق باطل.</li>
+                        <li><strong>الوساطة السيئة:</strong> الشفاعة التي تضيع حقوق الآخرين.</li>
                         <li><strong>إفشاء الأسرار:</strong> خيانة للأمانة الوظيفية.</li>
                     </ul>
                 </div>
@@ -368,12 +378,11 @@
         </div>
 
         <footer>
-            <p>جميع الحقوق محفوظة &copy; 2024 | تصميم احترافي للمراجعة الشاملة</p>
+            <p>جميع الحقوق محفوظة &copy; 2024 | Elite Review</p>
         </footer>
     </main>
 
     <script>
-        // تفعيل الإضاءة في القائمة الجانبية عند التمرير
         const sections = document.querySelectorAll('.section-container');
         const navItems = document.querySelectorAll('.nav-item');
 
@@ -381,8 +390,7 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
+                if (pageYOffset >= (sectionTop - 300)) {
                     current = section.getAttribute('id');
                 }
             });
