@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Review | المرجع الشامل (Pro Version)</title>
+    <title>Elite Review | الكتاب المقرر (92-162)</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-red: #D90429;   /* أحمر قوي */
-            --primary-green: #2ecc71; /* أخضر للأدلة */
-            --bg-body: #080808;
+            /* الألوان: أحمر وأسود وأخضر للأدلة */
+            --primary-red: #E50914;
+            --primary-green: #2ecc71;
+            --bg-body: #0a0a0a;
             --bg-sidebar: #000000;
             --bg-card: #141414;
-            --border: #333;
             --text-main: #f5f5f5;
+            --border-color: #333;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; }
@@ -28,173 +29,114 @@
             min-height: 100vh;
         }
 
-        /* --- القائمة الجانبية (وحدات منفصلة) --- */
+        /* --- القائمة الجانبية --- */
         aside {
-            width: 320px;
+            width: 300px;
             background-color: var(--bg-sidebar);
-            border-left: 1px solid var(--border);
+            border-left: 1px solid var(--border-color);
             height: 100vh;
             position: fixed;
             right: 0;
             top: 0;
             z-index: 1000;
-            padding: 40px 25px;
+            padding: 30px 20px;
             overflow-y: auto;
         }
 
         .brand {
-            font-size: 2rem;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 50px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary-red);
-            padding-bottom: 20px;
-            letter-spacing: 1px;
+            text-align: center; font-size: 1.8rem; font-weight: 900; color: #fff;
+            border-bottom: 3px solid var(--primary-red); padding-bottom: 20px; margin-bottom: 30px;
         }
         .brand span { color: var(--primary-red); }
 
         .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 25px;
-            margin-bottom: 20px;
-            color: #aaa;
-            text-decoration: none;
-            border-radius: 15px;
+            display: flex; align-items: center; gap: 15px;
+            padding: 16px; margin-bottom: 15px;
+            background: #1a1a1a; border: 1px solid #333; border-radius: 12px;
+            color: #ccc; text-decoration: none; font-weight: bold;
             transition: all 0.3s ease;
-            font-weight: 700;
-            background-color: #1a1a1a;
-            border: 1px solid var(--border);
         }
 
         .nav-item:hover, .nav-item.active {
-            border-color: var(--primary-red);
-            color: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(217, 4, 41, 0.2);
+            background: #222; border-color: var(--primary-red); color: #fff;
+            transform: translateX(-5px); box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
         }
-        .nav-item i { width: 30px; text-align: center; color: var(--primary-red); }
+        .nav-item i { color: var(--primary-red); font-size: 1.2rem; }
 
         /* --- المحتوى الرئيسي --- */
         main {
-            margin-right: 320px;
-            width: calc(100% - 320px);
+            margin-right: 300px;
+            width: calc(100% - 300px);
             padding: 50px;
         }
 
         /* الهيرو */
         .hero {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-            padding: 60px;
-            border-radius: 30px;
-            border-bottom: 4px solid var(--primary-red);
-            margin-bottom: 80px;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #000 0%, #1c1c1c 100%);
+            padding: 50px; border-radius: 25px; border-right: 6px solid var(--primary-red);
+            margin-bottom: 60px; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
-        .hero h1 { font-size: 3.5rem; color: var(--primary-red); margin-bottom: 15px; font-weight: 900; }
-        .hero p { font-size: 1.4rem; color: #ccc; max-width: 800px; line-height: 1.6; }
+        .hero h1 { font-size: 3rem; color: var(--primary-red); margin-bottom: 15px; }
+        .hero p { font-size: 1.3rem; color: #bbb; line-height: 1.6; }
 
-        /* الأقسام */
-        .section-container { margin-bottom: 120px; border-top: 1px solid #222; padding-top: 60px; }
-        
-        .section-header {
-            display: flex; align-items: center; gap: 20px; margin-bottom: 40px;
+        /* --- حل مشكلة التنقل (مهم جداً) --- */
+        /* هذه الخاصية تمنع العنوان من الاختفاء تحت الحواف عند الضغط */
+        .unit-section { 
+            scroll-margin-top: 20px; 
+            margin-bottom: 100px; 
+            border-top: 1px solid #222; 
+            padding-top: 60px; 
         }
-        .section-title { font-size: 2.5rem; color: #fff; font-weight: 800; border-right: 5px solid var(--primary-red); padding-right: 20px; }
 
-        /* الشبكة */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-        }
+        .unit-header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+        .unit-title { font-size: 2.5rem; color: #fff; font-weight: 800; }
+        .unit-icon { color: var(--primary-red); font-size: 2.5rem; }
+
+        /* --- البطاقات --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 35px; }
 
         .card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            overflow: hidden; /* للصور */
-            border: 1px solid var(--border);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 20px; overflow: hidden; transition: 0.3s;
+            display: flex; flex-direction: column;
         }
+        .card:hover { transform: translateY(-8px); border-color: var(--primary-red); box-shadow: 0 15px 50px rgba(0,0,0,0.7); }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-red);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        .card-img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(80%); transition: 0.3s; border-bottom: 3px solid var(--primary-red); }
+        .card:hover .card-img { filter: grayscale(0%); }
+
+        .card-body { padding: 30px; }
+        .card h3 { color: var(--primary-red); margin-bottom: 20px; font-size: 1.6rem; display: flex; align-items: center; gap: 10px; }
+
+        /* القوائم (وسائل وأساليب) */
+        .info-block { margin-bottom: 25px; }
+        .subtitle { font-size: 1.1rem; color: #fff; font-weight: bold; margin-bottom: 10px; display: block; }
+        .subtitle i { color: #888; margin-left: 8px; }
+
+        .custom-list { list-style: none; background: #111; padding: 20px; border-radius: 10px; border-right: 3px solid #444; }
+        .custom-list li { margin-bottom: 10px; position: relative; padding-right: 20px; color: #ddd; line-height: 1.7; }
+        .custom-list li::before { content: "▪"; color: var(--primary-red); position: absolute; right: 0; font-size: 1.2rem; line-height: 1; }
+
+        /* صندوق الفرق (مهم) */
+        .diff-box {
+            background: rgba(229, 9, 20, 0.05); border: 1px dashed var(--primary-red);
+            padding: 15px; border-radius: 10px; margin: 20px 0;
         }
+        .diff-header { color: var(--primary-red); font-weight: 900; display: block; margin-bottom: 8px; font-size: 1.1rem; }
 
-        /* صور داخل الكروت */
-        .card-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 3px solid var(--primary-red);
-            filter: brightness(0.8) grayscale(20%);
-            transition: 0.3s;
-        }
-        .card:hover .card-img { filter: brightness(1) grayscale(0%); }
-
-        .card-content { padding: 30px; }
-
-        .card h3 {
-            color: var(--primary-red); margin-bottom: 20px; font-size: 1.7rem; 
-            display: flex; align-items: center; gap: 15px;
-        }
-
-        .content-list { list-style: none; margin-bottom: 20px; }
-        .content-list li {
-            margin-bottom: 12px;
-            padding-right: 25px;
-            position: relative;
-            line-height: 1.7;
-            font-size: 1.1rem;
-            color: #ddd;
-        }
-        .content-list li::before {
-            content: "•"; color: var(--primary-red); position: absolute; right: 0; font-size: 1.5rem; line-height: 1;
-        }
-
-        /* مربع الفرق والتمييز */
-        .highlight-box {
-            background: #111;
-            border: 1px dashed #444;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .highlight-title { color: #fff; font-weight: bold; margin-bottom: 5px; display: block; }
-
-        /* النصوص الشرعية (الأخضر) */
+        /* الأدلة الشرعية (أخضر) */
         .islamic-box {
-            background: rgba(46, 204, 113, 0.05); /* خلفية خضراء خفيفة */
-            border: 1px solid var(--primary-green);
-            border-right: 6px solid var(--primary-green);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: auto; /* دفع الصندوق للأسفل */
+            background: rgba(46, 204, 113, 0.08); border-right: 5px solid var(--primary-green);
+            padding: 20px; border-radius: 10px; margin-top: 20px;
         }
-        .quran {
-            font-family: 'Amiri', serif; 
-            font-size: 1.4rem; 
-            color: var(--primary-green); /* النص أخضر */
-            font-weight: bold; 
-            line-height: 1.8;
-            margin-bottom: 8px;
-        }
-        .ref { display: block; font-size: 0.9rem; color: #888; font-family: 'Tajawal', sans-serif; }
+        .quran { font-family: 'Amiri', serif; font-size: 1.3rem; color: var(--primary-green); font-weight: bold; line-height: 2; }
+        .ref { display: block; font-size: 0.9rem; color: #888; margin-top: 5px; }
 
-        footer { text-align: center; padding: 50px; color: #666; font-size: 1rem; border-top: 1px solid #222; margin-top: 100px; }
-
-        @media (max-width: 1024px) {
-            aside { width: 80px; padding: 20px 10px; }
-            .brand, .nav-item span { display: none; }
-            .nav-item { justify-content: center; padding: 0; width: 60px; height: 60px; }
-            main { margin-right: 80px; width: calc(100% - 80px); padding: 30px; }
+        @media (max-width: 900px) {
+            aside { width: 70px; padding: 20px 10px; }
+            .brand span, .nav-item span { display: none; }
+            .nav-item { justify-content: center; }
+            main { margin-right: 70px; width: calc(100% - 70px); padding: 20px; }
             .grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -202,212 +144,310 @@
 <body>
 
     <aside>
-        <div class="brand">ELITE<span>REVIEW</span></div>
-        <a href="#u8" class="nav-item active"><i class="fas fa-sitemap"></i> <span>الوحدة 8</span></a>
-        <a href="#u9" class="nav-item"><i class="fas fa-landmark"></i> <span>الوحدة 9</span></a>
-        <a href="#u10" class="nav-item"><i class="fas fa-scroll"></i> <span>الوحدة 10</span></a>
-        <a href="#u11" class="nav-item"><i class="fas fa-seedling"></i> <span>الوحدة 11</span></a>
-        <a href="#u12" class="nav-item"><i class="fas fa-gavel"></i> <span>الوحدة 12</span></a>
+        <div class="brand">ELITE<span>.BOOK</span></div>
+        <a href="#u8" class="nav-item"><i class="fas fa-sitemap"></i> <span>الوحدة 8 (الإدارة)</span></a>
+        <a href="#u9" class="nav-item"><i class="fas fa-landmark"></i> <span>الوحدة 9 (النماذج)</span></a>
+        <a href="#u10" class="nav-item"><i class="fas fa-scroll"></i> <span>الوحدة 10 (الميثاق)</span></a>
+        <a href="#u11" class="nav-item"><i class="fas fa-seedling"></i> <span>الوحدة 11 (الترسيخ)</span></a>
+        <a href="#u12" class="nav-item"><i class="fas fa-gavel"></i> <span>الوحدة 12 (المخالفات)</span></a>
     </aside>
 
     <main>
         <div class="hero">
-            <h1>أخلاقيات المهنة (92 - 162)</h1>
-            <p>النسخة الكاملة: مع الصور التوضيحية، الأدلة الشرعية بالأخضر، والتصميم المرتب.</p>
+            <h1>خلاصة الكتاب المقرر (4)</h1>
+            <p>الصفحات من 92 إلى 162 | تغطية شاملة للوسائل، الأساليب، الفروقات، والأدلة الشرعية.</p>
         </div>
 
-        <div id="u8" class="section-container">
-            <div class="section-header">
-                <div class="section-title">الوحدة 8: الإدارة</div>
+        <div id="u8" class="unit-section">
+            <div class="unit-header">
+                <i class="fas fa-sitemap unit-icon"></i>
+                <div class="unit-title">الوحدة 8: أخلاقيات الإدارة</div>
             </div>
-            
+
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=1471" class="card-img" alt="تخطيط">
-                    <div class="card-content">
-                        <h3><i class="fas fa-compass"></i> أولاً: التخطيط</h3>
-                        <ul class="content-list">
-                            <li><strong>التعريف:</strong> التدبير الذي يسبق العمل.</li>
-                            <li><strong>الوسائل:</strong> الإعداد الجيد، التوكل على الله.</li>
-                        </ul>
-                        <div class="highlight-box">
-                            <span class="highlight-title">⚠️ الفرق بين التوكل والتواكل:</span>
-                            التوكل هو الأخذ بالأسباب، أما التواكل فهو ترك الأسباب والكسل.
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470" class="card-img" alt="تخطيط">
+                    <div class="card-body">
+                        <h3><i class="fas fa-compass"></i> أولاً: التخطيط والتنظيم</h3>
+                        
+                        <div class="info-block">
+                            <span class="subtitle"><i class="fas fa-tools"></i> الوسائل (كيف نخطط وننظم؟):</span>
+                            <ul class="custom-list">
+                                <li><strong>الإعداد الجيد:</strong> دراسة الإمكانات المتاحة والتوقعات المستقبلية.</li>
+                                <li><strong>توزيع الأدوار:</strong> عدم الازدواجية في المهام.</li>
+                                <li><strong>معيار التوظيف:</strong> الجمع بين (القوة) أي الكفاءة، و(الأمانة).</li>
+                            </ul>
+                        </div>
+
+                        <div class="diff-box">
+                            <span class="diff-header">⚠️ فرق جوهري (في التخطيط):</span>
+                            <p><strong>التوكل:</strong> الأخذ بالأسباب مع اعتماد القلب على الله.<br>
+                            <strong>التواكل:</strong> ترك الأسباب وانتظار النتائج (وهو مذموم).</p>
+                        </div>
+
+                        <div class="islamic-box">
+                            <div class="quran">﴿وَأَعِدُّوا لَهُم مَّا اسْتَطَعْتُم مِّن قُوَّةٍ﴾</div>
+                            <span class="ref">دليل وجوب التخطيط والإعداد (ص 100).</span>
                         </div>
                         <div class="islamic-box">
-                            <div class="quran">"وَأَعِدُّوا لَهُم مَّا اسْتَطَعْتُم مِّن قُوَّةٍ"</div>
-                            <span class="ref">دليل: وجوب التخطيط</span>
+                            <div class="quran">﴿إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ﴾</div>
+                            <span class="ref">معيار التوظيف (ص 150).</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1484" class="card-img" alt="تنظيم">
-                    <div class="card-content">
-                        <h3><i class="fas fa-users-cog"></i> ثانياً: التنظيم والتوظيف</h3>
-                        <ul class="content-list">
-                            <li><strong>الهدف:</strong> منع الازدواجية وتحديد المسؤوليات.</li>
-                            <li><strong>المعيار:</strong> القوة (الكفاءة) والأمانة.</li>
-                        </ul>
+                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ce7d5d?q=80&w=1470" class="card-img" alt="رقابة">
+                    <div class="card-body">
+                        <h3><i class="fas fa-eye"></i> ثانياً: التوجيه والرقابة</h3>
+                        
+                        <div class="info-block">
+                            <span class="subtitle"><i class="fas fa-route"></i> الأساليب (كيف نوجه؟):</span>
+                            <ul class="custom-list">
+                                <li><strong>اللين والرحمة:</strong> (ولو كنت فظاً غليظ القلب لانفضوا من حولك).</li>
+                                <li><strong>الشورى:</strong> عدم الاستبداد بالرأي.</li>
+                                <li><strong>التثبت:</strong> التأكد من المعلومات قبل اتخاذ القرار.</li>
+                            </ul>
+                        </div>
+
+                        <div class="diff-box">
+                            <span class="diff-header">⚠️ الفرق بين أنواع الرقابة:</span>
+                            <p><strong>الرقابة الذاتية:</strong> (استشعار مراقبة الله) وهي الأقوى والأهم.<br>
+                            <strong>الرقابة الإدارية:</strong> (متابعة المسؤولين) وهي مكملة.</p>
+                        </div>
+
                         <div class="islamic-box">
-                            <div class="quran">﴿إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ﴾</div>
-                            <span class="ref">دليل: معايير التوظيف</span>
+                            <div class="quran">"كلكم راعٍ وكلكم مسؤول عن رعيته"</div>
+                            <span class="ref">حديث شريف (ص 104).</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="u9" class="section-container">
-            <div class="section-header">
-                <div class="section-title">الوحدة 9: نماذج حضارية</div>
+        <div id="u9" class="unit-section">
+            <div class="unit-header">
+                <i class="fas fa-landmark unit-icon"></i>
+                <div class="unit-title">الوحدة 9: نماذج من الحضارة</div>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1373" class="card-img" alt="كتب">
-                    <div class="card-content">
-                        <h3><i class="fas fa-book-reader"></i> التعليم (ابن جماعة)</h3>
-                        <ul class="content-list">
-                            <li><strong>آداب المعلم (الوسائل):</strong> دوام مراقبة الله، صيانة العلم عن الأطماع.</li>
-                            <li><strong>الأسلوب:</strong> قول "لا أدري" لما لا يعلم (نصف العلم).</li>
-                        </ul>
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1373" class="card-img" alt="تعليم">
+                    <div class="card-body">
+                        <h3><i class="fas fa-book-reader"></i> 1. التعليم (ابن جماعة)</h3>
+                        <p style="color:#888; margin-bottom:10px;">كتاب: تذكرة السامع والمتكلم</p>
+                        
+                        <div class="info-block">
+                            <span class="subtitle">📌 الوسائل والآداب:</span>
+                            <ul class="custom-list">
+                                <li><strong>دوام المراقبة:</strong> في السر والعلن.</li>
+                                <li><strong>صيانة العلم:</strong> عدم جعله سلماً لأغراض دنيوية.</li>
+                                <li><strong>قول "لا أدري":</strong> لنصف العلم (ص 112).</li>
+                            </ul>
+                        </div>
+
                         <div class="islamic-box">
                             <div class="quran">"من سُئل عن علم فكتمه ألجمه الله بلجام من نار"</div>
-                            <span class="ref">حديث: تحريم كتمان العلم</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1470" class="card-img" alt="ميزان">
-                    <div class="card-content">
-                        <h3><i class="fas fa-balance-scale"></i> نظام الحسبة</h3>
-                        <ul class="content-list">
-                            <li><strong>التعريف:</strong> الأمر بالمعروف إذا ظهر تركه، والنهي عن المنكر إذا ظهر فعله.</li>
-                            <li><strong>المجالات:</strong> مراقبة الأسواق، الموازين، الآداب العامة.</li>
-                        </ul>
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470" class="card-img" alt="طب">
+                    <div class="card-body">
+                        <h3><i class="fas fa-stethoscope"></i> 2. الطب (علي بن رضوان)</h3>
+                        
+                        <div class="info-block">
+                            <span class="subtitle">📌 الخصال السبع للطبيب (ص 114):</span>
+                            <ul class="custom-list">
+                                <li>كتمان الأسرار.</li>
+                                <li>عفة النظر (خاصة عن النساء والمنازل).</li>
+                                <li>الرحمة وعلاج الفقراء.</li>
+                                <li>صحة الجسم ونظافة الثوب.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="diff-box">
+                            <span class="diff-header">⚖️ قاعدة فقهية:</span>
+                            <p>"من تطبب ولم يُعلم منه طب فهو ضامن" (يتحمل المسؤولية).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1472" class="card-img" alt="حسبة">
+                    <div class="card-body">
+                        <h3><i class="fas fa-balance-scale"></i> 3. نظام الحسبة</h3>
+                        
+                        <div class="info-block">
+                            <span class="subtitle">📋 التعريف والمهام:</span>
+                            <ul class="custom-list">
+                                <li><strong>التعريف:</strong> الأمر بالمعروف إذا ظهر تركه، والنهي عن المنكر إذا ظهر فعله.</li>
+                                <li><strong>آداب المحتسب:</strong> الرفق، الصبر، العلم بالشرع (ص 116).</li>
+                                <li><strong>المجالات:</strong> الأسواق، المكاييل والموازين، الآداب العامة.</li>
+                            </ul>
+                        </div>
+
                         <div class="islamic-box">
                             <div class="quran">﴿وَلْتَكُن مِّنكُمْ أُمَّةٌ يَدْعُونَ إِلَى الْخَيْرِ وَيَأْمُرُونَ بِالْمَعْرُوفِ﴾</div>
-                            <span class="ref">دليل: مشروعية الحسبة</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="u10" class="section-container">
-            <div class="section-header">
-                <div class="section-title">الوحدة 10: الميثاق الأخلاقي</div>
+        <div id="u10" class="unit-section">
+            <div class="unit-header">
+                <i class="fas fa-scroll unit-icon"></i>
+                <div class="unit-title">الوحدة 10: ميثاق التعليم</div>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1427504746696-ea30b5e849a4?q=80&w=1470" class="card-img" alt="ميثاق">
-                    <div class="card-content">
-                        <h3><i class="fas fa-id-card"></i> رسالة المعلم</h3>
-                        <ul class="content-list">
-                            <li><strong>الرسالة:</strong> التعليم رسالة سامية لبناء الأجيال.</li>
-                            <li><strong>الصفات:</strong> يمثل المسلم الوسطي، يعتز بوطنه، وقدوة لطلابه.</li>
-                        </ul>
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1470" class="card-img" alt="ميثاق">
+                    <div class="card-body">
+                        <h3><i class="fas fa-id-card"></i> رسالة المعلم والمواد</h3>
+                        
+                        <div class="info-block">
+                            <span class="subtitle">📌 أهم المواد (ص 127-131):</span>
+                            <ul class="custom-list">
+                                <li><strong>المادة 3 (الرسالة):</strong> التعليم رسالة تستمد أخلاقياتها من العقيدة.</li>
+                                <li><strong>المادة 4 (الأداء):</strong> المعلم قدوة، يدرك أن الله رقيبه.</li>
+                                <li><strong>المادة 5 (الطلاب):</strong> العلاقة أساسها المودة والحزم، والعدل بينهم.</li>
+                                <li><strong>المادة 6 (المجتمع):</strong> تعزيز الانتماء الوطني والوسطية.</li>
+                            </ul>
+                        </div>
+                        
                         <div class="islamic-box">
                             <div class="quran">"إنما بعثت لأتمم مكارم الأخلاق"</div>
-                            <span class="ref">حديث شريف</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="u11" class="section-container">
-            <div class="section-header">
-                <div class="section-title">الوحدة 11: الترسيخ</div>
+        <div id="u11" class="unit-section">
+            <div class="unit-header">
+                <i class="fas fa-seedling unit-icon"></i>
+                <div class="unit-title">الوحدة 11: وسائل الترسيخ</div>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1374" class="card-img" alt="تعلم">
-                    <div class="card-content">
+                    <img src="https://images.unsplash.com/photo-1518481612222-68bbe828ecd1?q=80&w=1470" class="card-img" alt="إيمان">
+                    <div class="card-body">
                         <h3><i class="fas fa-heart"></i> الوسائل الإيمانية (الذاتية)</h3>
-                        <ul class="content-list">
-                            <li><strong>الرقابة الذاتية:</strong> تعتمد على مقام "الإحسان".</li>
-                            <li><strong>تصحيح الفهم:</strong> اعتبار الوظيفة "عبادة".</li>
+                        <ul class="custom-list">
+                            <li><strong>تنمية الرقابة الذاتية:</strong> استشعار "مقام الإحسان" (أن تعبد الله كأنك تراه).</li>
+                            <li><strong>تصحيح الفهم:</strong> العمل "عبادة" و"أمانة" (ص 140).</li>
                         </ul>
                         <div class="islamic-box">
                             <div class="quran">﴿أَلَمْ يَعْلَمْ بِأَنَّ اللَّهَ يَرَى﴾</div>
-                            <span class="ref">دليل: الرقابة الذاتية</span>
+                            <span class="ref">دليل الرقابة الذاتية (ص 139).</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470" class="card-img" alt="إدارة">
-                    <div class="card-content">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1471" class="card-img" alt="إدارة">
+                    <div class="card-body">
                         <h3><i class="fas fa-briefcase"></i> الوسائل الإدارية (الخارجية)</h3>
-                        <ul class="content-list">
-                            <li><strong>القدوة القيادية:</strong> صلاح المدير يؤثر في الموظفين.</li>
-                            <li><strong>الأنظمة:</strong> الثواب والعقاب (التقييم المستمر).</li>
+                        <ul class="custom-list">
+                            <li><strong>القدوة القيادية:</strong> تأثر الموظفين بمديرهم (إيجاباً وسلباً).</li>
+                            <li><strong>التقييم المستمر:</strong> الثواب للمحسن والعقاب للمسيء.</li>
+                            <li><strong>تحقيق الرضا الوظيفي:</strong> العدالة وإشباع الحاجات.</li>
                         </ul>
                         <div class="islamic-box">
                             <div class="quran">"أعطوا الأجير أجره قبل أن يجف عرقه"</div>
-                            <span class="ref">دليل: حقوق الموظف</span>
+                            <span class="ref">دليل الحقوق (ص 143).</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="u12" class="section-container">
-            <div class="section-header">
-                <div class="section-title">الوحدة 12: المخالفات</div>
+        <div id="u12" class="unit-section">
+            <div class="unit-header">
+                <i class="fas fa-gavel unit-icon"></i>
+                <div class="unit-title">الوحدة 12: المخالفات</div>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1472" class="card-img" alt="قانون">
-                    <div class="card-content">
-                        <h3><i class="fas fa-gavel"></i> الفساد المالي والإداري</h3>
-                        <ul class="content-list">
-                            <li><strong>الرشوة:</strong> مال لإحقاق باطل (ملعونة).</li>
-                            <li><strong>الغلول:</strong> الأخذ من المال العام (يشمل هدايا العمال).</li>
-                            <li><strong>الشفاعة السيئة:</strong> أكل حقوق الآخرين بالواسطة.</li>
+                    <img src="https://images.unsplash.com/photo-1599256621730-d3ae1c9c5519?q=80&w=1470" class="card-img" alt="فساد">
+                    <div class="card-body">
+                        <h3><i class="fas fa-coins"></i> 1. السرقة والرشوة</h3>
+                        <ul class="custom-list">
+                            <li><strong>الرشوة:</strong> ما يعطى لإحقاق باطل أو إبطال حق.</li>
+                            <li><strong>الغلول:</strong> الأخذ من المال العام، ومنه "هدايا العمال".</li>
                         </ul>
                         <div class="islamic-box">
                             <div class="quran">"لعن الله الراشي والمرتشي"</div>
+                            <span class="ref">الرشوة من الكبائر (ص 152).</span>
                         </div>
                         <div class="islamic-box" style="margin-top:10px;">
                             <div class="quran">"هدايا العمال غلول"</div>
+                            <span class="ref">(ص 153).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470" class="card-img" alt="غش">
+                    <div class="card-body">
+                        <h3><i class="fas fa-user-times"></i> 2. الغش والوساطة</h3>
+                        
+                        <div class="diff-box">
+                            <span class="diff-header">⚠️ الفرق الجوهري في الشفاعة (ص 158):</span>
+                            <p><strong>الشفاعة الحسنة:</strong> مساعدة الغير دون سلب حقوق الآخرين (جائزة).<br>
+                            <strong>الشفاعة السيئة:</strong> تقديم غير المستحق وأكل حقوق الناس (محرمة).</p>
+                        </div>
+
+                        <div class="info-block">
+                            <span class="subtitle">🚫 إفشاء الأسرار:</span>
+                            <ul class="custom-list">
+                                <li>خيانة للأمانة.</li>
+                                <li>علاجه: تذكر حديث "المجالس بالأمانة".</li>
+                            </ul>
+                        </div>
+
+                        <div class="islamic-box">
+                            <div class="quran">"مَنْ غَشَّ فَلَيْسَ مِنَّا"</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer>
-            <p>تم التصميم باحترافية - جميع الحقوق محفوظة &copy; 2024</p>
+        <footer style="text-align: center; color: #666; padding: 40px; border-top: 1px solid #222;">
+            <p>جميع الحقوق محفوظة &copy; 2026 | ملخص الكتاب المقرر (4)</p>
         </footer>
+
     </main>
 
     <script>
-        // كود بسيط لتفعيل القائمة عند السكرول
-        const sections = document.querySelectorAll('.section-container');
+        // كود تفعيل القائمة الجانبية أثناء التمرير
+        const sections = document.querySelectorAll('.unit-section');
         const navItems = document.querySelectorAll('.nav-item');
 
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 300;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
-
-                if(top >= offset && top < offset + height) {
-                    navItems.forEach(links => {
-                        links.classList.remove('active');
-                        document.querySelector('aside a[href*=' + id + ']').classList.add('active');
-                    });
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
                 }
             });
-        };
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
